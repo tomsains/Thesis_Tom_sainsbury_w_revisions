@@ -1,0 +1,145 @@
+\documentclass[a4paper,12pt,oneside]{report}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage[style=authoryear,minnames = 1, maxbibnames=99, maxcitenames=2,uniquelist=false,uniquename=false,doi=false,url=false,isbn=false, date=year]{biblatex}
+\usepackage{xcolor}
+\setlength\bibitemsep{1.5\itemsep}
+\usepackage[tocindent=4em]{tocloft}
+\setlength{\cftfignumwidth}{3em}
+\setlength\cftbeforechapskip{10pt}
+\renewcommand\cftfigafterpnum{\vskip5pt\par}
+\renewcommand\cfttabafterpnum{\vskip5pt\par}
+
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+
+
+\usepackage[acronym, nonumberlist]{glossaries}
+\makeglossaries
+\include{Chapters/abbreviaitons}
+
+
+
+\usepackage{caption}
+% the following format will be used to emulate the captions produced by fltpage
+\DeclareCaptionLabelFormat{adja-page}{\hrulefill\\#1 #2 \emph{(previous page)}}
+
+\captionsetup{font=footnotesize}
+
+% cite package, to clean up citations in the main text. Do not remove.
+%\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+%\usepackage{nameref,hyperref}
+
+% line numbers
+%\usepackage[right]{lineno}
+
+\setcounter{tocdepth}{2}
+
+\addbibresource{references.bib}
+
+\setlength\parindent{0pt}
+\parskip 0.5 cm 
+\usepackage[a4paper,width=150mm,left = 20mm,right = 20mm, top=25mm,bottom=25mm,bindingoffset=10mm]{geometry}
+
+\usepackage{setspace} 
+\onehalfspacing
+ 
+\graphicspath{{Figures/}} 
+ 
+
+
+%\title{
+  %  {\center{}{The effect of environmental enrichment on tectal dynamics and tectally-mediated behaviour}} \\
+   % {\newline \large{King's College London}} \\
+    % \\
+%}
+
+%\author{Thomas T. J. Sainsbury}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+    \addcontentsline{toc}{chapter}{Title page}
+    \input{Chapters/Titlepage}
+    
+    
+    
+    
+    \chapter*{Abstract}
+    \addcontentsline{toc}{chapter}{Abstract}
+    Different visual environments can present unique challenges for the visual system. Even individuals of the same species can occupy very distinct ecological niches. To ensure that the performance of visually-guided behaviours is maintained in the face of environmental diversity, the development of visual systems is plastic, enabling adaptive changes according to environmental demands. 
+
+    A wealth of experimental evidence demonstrates that visual experience during developmental periods can alter both the structure and function of individual neurons, the organization of sensory maps and even the number of neurons in the brain. However, in most cases it is not known if or how these changes modify behaviour. Furthermore, because behaviour is an emergent property of activity in distributed populations of neurons, it is challenging to relate changes in the properties of individual neurons and maps to behaviour.  To address this, I have used larval zebrafish as a model to determine how enrichment of the visual environment (raising fish on a bed of gravel) impacts the structure and dynamics of population activity in the visual system and the performance of visually-guided behaviour. 
+    
+    Using 2-photon volumetric imaging to capture the activity of thousands of neurons throughout the optic tectum of the larval zebrafish (the largest visual area of the zebrafish brain) combined with Bayesian inference techniques I have shown that environmental enrichment has a profound effect on the dynamics and developmental trajectory of spontaneous tectal assemblies. Furthermore, I show using a prey-capture assay that hunting performance of larval zebrafish raised in enriched and non-enriched environments is equal if the assay is performed against a non-textured background. However, zebrafish raised in the enriched environment consume significantly more prey than larvae raised in a non-enriched environment when larvae from both groups hunt in visual background containing gravel. These results suggest that environmental enrichment modifies the structure of population activity in the tectum and that this correlates with improved performance of a tectally-mediated behaviour in a complex visual environment. 
+    
+    To understand which forms of plasticity may be underlying these experience dependent changes we generated zebrafish carrying null mutations in \textit{grin2aa} and \textit{grin2ab} which code for isoforms of the NR2A subunit of the NMDA receptor. I find that the effects of environmental enrichment are blocked in \textit{grin2aa/ab} double mutants, suggesting that the subunit composition of the NMDAR is crucial for mediating the effects of environmental enrichment on functional development of the tectum. 
+    
+    Finally, changes in behaviour are difficult to relate to changes in spontaneous tectal activity. Therefore I developed a "virtual reality" hunting assay that allows for neural activity in the tectum and tail movements to be recorded whilst the larvae are presented with stimuli that resemble prey. To mimic the hunting assay these stimuli are presented over textured and non-textured backgrounds and the position of the stimulus was decoded from tectal activity. Preliminary results suggest that tectal representation of prey location may be contextually modulated by the background with decoding performance increasing when the stimuli were viewed over the textured background. This setup will allow for differences between gravel reared and normally reared fish in visually evoked tectal activity to be investigated in future experiments.
+  
+      
+      
+    \clearpage
+    \chapter*{Acknowledgements}
+    \addcontentsline{toc}{chapter}{Acknowledgements}
+    \input{Chapters/Aknowledgements}
+    
+    \clearpage
+    \tableofcontents
+    \addcontentsline{toc}{chapter}{Table of contents}
+    \clearpage
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of figures}
+    
+    
+    \clearpage
+    
+    \printglossary[type=\acronymtype,title=Abbreviations,nonumberlist]
+    %\input{Chapters/abbreviaitons}
+    \addcontentsline{toc}{chapter}{Abbreviations}
+    
+    \chapter{Introduction}
+    \input{Chapters/Introduction}
+
+   
+   \chapter{Materials and Methods}
+   \input{Chapters/Materials_and_methods.tex}
+    
+    \chapter{Population activity in the optic tectum of the larval zebrafish}
+    \input{Chapters/Results_chapter_1.tex}
+    
+    \chapter{The effect of environmental enrichment on the development of a visually guided behaviour and tectal population activity}
+    \input{Chapters/Results_chapter_2.tex}
+    
+   \chapter{Examining visually evoked activity and behaviour in a virtual reality hunting assay}
+   \input{Chapters/Results_chapter_3.tex}
+   
+   \chapter{Conclusions and perspectives}
+   \input{Chapters/Conclusions_and_future_work}
+    
+    \printbibliography
+    
+\end{document}
